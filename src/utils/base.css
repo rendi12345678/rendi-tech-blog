@@ -1,0 +1,74 @@
+@layer base {
+  @import url("reset.css");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+  body {
+    @apply bg-primary pb-2xl text-body overflow-x-hidden;
+  }
+
+  .heading {
+    @apply font-extrabold leading-[1.1] font-sans text-heading;
+  }
+
+  h1 {
+    @apply heading text-3xl font-bold;
+  }
+
+  h2 {
+    @apply heading text-xl font-bold;
+  }
+
+  h3 {
+    @apply heading text-lg font-bold;
+  }
+
+  p,
+  select,
+  button,
+  a,
+  li {
+    @apply text-sm text-body font-normal leading-[1.5] break-words font-sans;
+  }
+
+  article h1 {
+    @apply mt-xl mb-xs;
+  }
+
+  article h2 {
+    @apply mb-sm mt-2xl;
+  }
+
+  article h3 {
+    @apply mb-xs mt-xl;
+  }
+
+  article img {
+    @apply w-full aspect-video sm:w-[245px] shadow-md shadow-heading/15 rounded-md object-cover box-border;
+  }
+
+  .post-article p,
+  .post-article li {
+    @apply mb-xs;
+  }
+
+  .post-article ol,
+  .post-article ul {
+    @apply list-inside;
+  }
+
+  .post-article ol {
+    @apply list-disc;
+  }
+
+  .post-article li {
+    @apply list-decimal;
+  }
+
+  strong {
+    @apply text-heading;
+  }
+
+  pre {
+    @apply max-w-full overflow-x-auto shadow-md shadow-heading/15 bg-secondary p-sm mt-md mb-sm rounded-md;
+  }
+}
