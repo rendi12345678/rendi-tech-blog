@@ -69,6 +69,6 @@
   }
 
   pre {
-    @apply max-w-full overflow-x-auto shadow-md shadow-heading/15 bg-secondary p-sm sm:p-md mt-md sm:mt-lg mb-md sm:mb-lg rounded-md;
+    @apply overflow-x-auto shadow-md shadow-heading/15 bg-secondary p-sm sm:p-md mt-md sm:mt-lg mb-md sm:mb-lg rounded-md;
   }
 }

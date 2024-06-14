@@ -20,7 +20,7 @@ export default {
         "2xl": "2rem",
       },
       screens: {
-        md: "820px",
+        md: "51.25rem",
       },
     },
     colors: {

@@ -7,7 +7,7 @@
   }
 
   .card-cols-2 {
-    grid-template-columns: 310px auto;
+    grid-template-columns: 19.375rem auto;
   }
 
   .card-title {

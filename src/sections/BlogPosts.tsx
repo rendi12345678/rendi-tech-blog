@@ -4,6 +4,7 @@ import { Button } from "../components";
 import useMoveRoute from "../hooks/useMoveRoute";
 import { BlogPost } from "../lib/types";
 import useFilterPosts from "../hooks/useFilterPosts";
+import useExtractWords from "../hooks/useExtractWords";
 
 export interface BlogPostsProps {}
 
@@ -18,7 +19,8 @@ export default function BlogPosts(): ReactElement {
   const [filteredBlogPosts, setFilteredBlogPosts] = useState<BlogPost[] | []>(
     []
   );
-  const [selectedOption, setSelectedOption] = useState<string>("english");
+  const [selectedOption, setSelectedOption] = useState<string>("indonesian");
+  const extractWords = useExtractWords();
 
   const options: Option[] = [
     { value: "english", label: "English" },
@@ -55,7 +57,7 @@ export default function BlogPosts(): ReactElement {
           </select>
         </header>
         <section>
-          <ul className="flex flex-col gap-lg">
+          <ul className="flex flex-col gap-lg box-border sm:gap-xl">
             {filteredBlogPosts.length === 0 ? (
               <li>
                 <p>I haven't created it yet..</p>
@@ -65,10 +67,14 @@ export default function BlogPosts(): ReactElement {
                 return (
                   <React.Fragment key={index}>
                     {post && (
-                      <li>
-                        <article className="grid gap-md sm:card-cols-2 sm:gap-lg box-border">
-                          <img src={post.imageUrl} alt="Thumbnail" />
-                          <div className="flex flex-col gap-xs sm:gap-sm items-start">
+                      <li className="w-full">
+                        <div className="grid gap-md sm:card-cols-2 sm:gap-lg box-border">
+                          <img
+                            src={post.imageUrl}
+                            alt="Thumbnail"
+                            className="rounded-md"
+                          />
+                          <div className="flex flex-col w-full gap-xs sm:gap-sm items-start">
                             <div>
                               <p className="text-xs sm:text-sm mb-2xs">
                                 Published: {`${post.datePublished}`}
@@ -78,7 +84,7 @@ export default function BlogPosts(): ReactElement {
                               </p>
                             </div>
                             <div className="line-clamp-2 box-border">
-                              <p className="max-w-text">{post.content}</p>
+                              <p>{`${extractWords(post.content, 25)}`}</p>
                             </div>
                             <Button
                               onClick={() =>
@@ -91,7 +97,7 @@ export default function BlogPosts(): ReactElement {
                               Read More
                             </Button>
                           </div>
-                        </article>
+                        </div>
                       </li>
                     )}
                   </React.Fragment>
