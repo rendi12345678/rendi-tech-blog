@@ -31,13 +31,12 @@ export default function BlogPosts(): ReactElement {
 
   useEffect(() => {
     const filteredPosts = filterPosts({ language: selectedOption });
-    console.log(filteredPosts);
 
     setFilteredBlogPosts(filteredPosts);
   }, [selectedOption]);
 
   return (
-    <section className="pt-2xl">
+    <section className="pt-2xl sm:pt-3xl">
       <div className="container">
         <header className="flex justify-between mb-lg sm:xl">
           <h2>My Blog</h2>
@@ -67,20 +66,26 @@ export default function BlogPosts(): ReactElement {
                   <React.Fragment key={index}>
                     {post && (
                       <li>
-                        <article className="grid gap-md sm:card-cols-2 box-border">
+                        <article className="grid gap-md sm:card-cols-2 sm:gap-lg box-border">
                           <img src={post.imageUrl} alt="Thumbnail" />
-                          <div className="flex flex-col gap-xs items-start">
+                          <div className="flex flex-col gap-xs sm:gap-sm items-start">
                             <div>
-                              <p className="text-xs mb-2xs">
+                              <p className="text-xs sm:text-sm mb-2xs">
                                 Published: {`${post.datePublished}`}
                               </p>
-                              <p className="text-heading">{post.title}</p>
+                              <p className="text-heading line-clamp-1">
+                                {post.title}
+                              </p>
                             </div>
-                            <div className="line-clamp-2 sm:max-w-[45ch] box-border">
-                              {post.content}
+                            <div className="line-clamp-2 box-border">
+                              <p className="max-w-text">{post.content}</p>
                             </div>
                             <Button
-                              onClick={() => moveRoute(`posts/${post.id}`)}
+                              onClick={() =>
+                                moveRoute(
+                                  `posts/${encodeURIComponent(post.title)}`
+                                )
+                              }
                               className="text-heading underline"
                             >
                               Read More

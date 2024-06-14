@@ -9,16 +9,16 @@ function Posts() {
   const [post, setPost] = useState<BlogPost | undefined>(undefined);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const { id } = useParams<{ id: string }>();
+  const { title } = useParams<{ title: string }>();
   const { blogPosts } = useAppProvider();
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        if (id) {
-          const post = blogPosts.find((post) => post.id === parseInt(id));
+        if (title) {
+          const post = blogPosts.find((post) => post.title === title);
 
-          if (post === undefined) throw new Error("No post ID provided"); // Handle missing ID
+          if (post === undefined) throw new Error("No post Title provided");
           setPost(post);
         }
       } catch (error) {
@@ -29,27 +29,27 @@ function Posts() {
     };
 
     fetchPost();
-  }, [id]);
+  }, [title]);
 
   return (
     <section className="pt-navbar1">
-      <main className="pt-2xl container">
+      <main className="pt-2xl sm:pt-3xl container">
         {isLoading ? (
           <p>Loading...</p>
         ) : error ? (
           <p>{error.message}</p>
         ) : (
           post && (
-            <article className="post-article mb-2xl">
+            <article className="post-article mb-2xl sm:mb-3xl">
               <img
                 className="aspect-video shadow-md shadow-heading/15 w-full sm:max-w-[100%]"
                 src={post.imageUrl}
                 alt="Main image"
               />
               <div>
-                <div className="mt-2xl mb-md">
+                <div className="mt-2xl sm:mt-3xl mb-md sm:mb-lg">
                   <h1>{post.title}</h1>
-                  <p className="text-xs mt-2xs">
+                  <p className="text-xs sm:text-sm mt-2xs">
                     Published: {`${post.datePublished}`}
                   </p>
                 </div>

@@ -1,7 +1,7 @@
 import { type ReactElement, ReactNode } from "react";
 import { createContext } from "use-context-selector";
 import { type BlogPost } from "../lib/types";
-import { post1, post2 } from "../assets/markdown";
+import { post1, post2, post3 } from "../assets/markdown";
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -43,6 +43,16 @@ const blogPosts: BlogPost[] = [
     datePublished: formatDate("2024-06-12"),
     content: post2,
     imageUrl: "/images/neovim-tmux.png",
+    language: "indonesian",
+  },
+  {
+    id: 3,
+    title:
+      "Setup Neovim untuk React Js, Tailwind CSS, dan Next Js 2024 dengan LazyVim",
+    author: "Rendi Virgantara Setiawan",
+    datePublished: formatDate("2024-06-14"),
+    content: post3,
+    imageUrl: "/images/neovim.png",
     language: "indonesian",
   },
 ];

@@ -20,7 +20,7 @@ export default {
         "2xl": "2rem",
       },
       screens: {
-        md: "40.625rem",
+        md: "820px",
       },
     },
     colors: {
@@ -38,6 +38,7 @@ export default {
       lg: "1.5rem", // 24px
       xl: "1.75rem", // 28px
       "2xl": "2rem", // 32px
+      "3xl": "36px", // 42px
       navbar1: "3.75rem",
     },
     extend: {

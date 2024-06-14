@@ -11,15 +11,15 @@
   }
 
   h1 {
-    @apply heading text-3xl font-bold;
+    @apply heading text-3xl sm:text-4xl font-bold;
   }
 
   h2 {
-    @apply heading text-xl font-bold;
+    @apply heading text-xl font-bold sm:text-2xl;
   }
 
   h3 {
-    @apply heading text-lg font-bold;
+    @apply heading text-lg font-bold sm:text-xl;
   }
 
   p,
@@ -27,28 +27,28 @@
   button,
   a,
   li {
-    @apply text-sm text-body font-normal leading-[1.5] break-words font-sans;
+    @apply text-sm sm:text-lg text-body font-normal leading-[1.5] break-words font-sans;
   }
 
   article h1 {
-    @apply mt-xl mb-xs;
+    @apply mt-xl mb-xs sm:mt-2xl sm:mb-sm;
   }
 
   article h2 {
-    @apply mb-sm mt-2xl;
+    @apply mb-sm mt-2xl sm:mb-md sm:mt-3xl;
   }
 
   article h3 {
-    @apply mb-xs mt-xl;
+    @apply mb-xs mt-xl sm:mb-sm sm:mt-2xl;
   }
 
   article img {
-    @apply w-full aspect-video sm:w-[245px] shadow-md shadow-heading/15 rounded-md object-cover box-border;
+    @apply w-full aspect-video shadow-md shadow-heading/15 rounded-md object-cover box-border;
   }
 
   .post-article p,
   .post-article li {
-    @apply mb-xs;
+    @apply mb-xs sm:mb-sm max-w-text;
   }
 
   .post-article ol,
@@ -57,11 +57,11 @@
   }
 
   .post-article ol {
-    @apply list-disc;
+    @apply list-decimal;
   }
 
-  .post-article li {
-    @apply list-decimal;
+  .post-article ul {
+    @apply list-disc;
   }
 
   strong {
@@ -69,6 +69,6 @@
   }
 
   pre {
-    @apply max-w-full overflow-x-auto shadow-md shadow-heading/15 bg-secondary p-sm mt-md mb-sm rounded-md;
+    @apply max-w-full overflow-x-auto shadow-md shadow-heading/15 bg-secondary p-sm sm:p-md mt-md sm:mt-lg mb-md sm:mb-lg rounded-md;
   }
 }
