@@ -55,6 +55,15 @@ const blogPosts: BlogPost[] = [
     imageUrl: "/images/neovim.png",
     language: "indonesian",
   },
+  {
+    id: 4,
+    title: "Cara hosting aplikasi web React Js di firebase",
+    author: "Rendi Virgantara Setiawan",
+    datePublished: formatDate("2024-06-14"),
+    content: post3,
+    imageUrl: "/images/neovim.png",
+    language: "indonesian",
+  },
 ];
 
 // Define the type for the context value (customize according to your actual context value)
