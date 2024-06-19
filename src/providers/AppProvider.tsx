@@ -1,7 +1,7 @@
 import { type ReactElement, ReactNode } from "react";
 import { createContext } from "use-context-selector";
 import { type BlogPost } from "../lib/types";
-import { post1, post2, post3 } from "../assets/markdown";
+import { post1, post2, post3, post4 } from "../assets/markdown";
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -57,11 +57,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: "Cara hosting aplikasi web React Js di firebase",
+    title: "Cara setup terminal ZSH di linux",
     author: "Rendi Virgantara Setiawan",
-    datePublished: formatDate("2024-06-14"),
-    content: post3,
-    imageUrl: "/images/neovim.png",
+    datePublished: formatDate("2024-06-19"),
+    content: post4,
+    imageUrl: "/images/selesai-zsh.png",
     language: "indonesian",
   },
 ];
